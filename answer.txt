@@ -1,0 +1,139 @@
+1.Print "Hello World" in reverse.
+
+
+test_string = input("Enter the string you want to reverse: ")
+print(test_string[::-1])
+
+
+def reverse(input):
+    stack =[]
+    reversed_str=[]
+
+    def push(test_string):
+        for i in test_string:
+            stack.append(i)
+
+    def pop(stack):
+        for i in range(len(stack)):
+            reversed_str.append(stack[-1])
+            stack.pop()
+        
+
+    push(input)
+    pop(stack)
+    str=""
+    for i in range (len(reversed_str)):
+        str+=reversed_str[i]
+    print(str)
+    
+reverse(test_string)
+
+output:
+
+Enter the string you want to reverse: Hello World
+dlroW olleH
+dlroW olleH
+
+2.Write a function that takes an array of numbers and returns a new array sorted from smallest to largest.
+
+arr = [2,8,7,1,10];     
+temp = 0;    
+new_arr=[] 
+ 
+print("Original array: ");    
+for i in range(0, len(arr)):    
+    print(arr[i], end=" ");    
+     
+ 
+for i in range(0, len(arr)):    
+    for j in range(i+1, len(arr)):    
+        if(arr[i] > arr[j]):    
+            temp = arr[i];    
+            arr[i] = arr[j];    
+            arr[j] = temp;    
+    new_arr.append(arr[i]) 
+print();    
+     
+
+print("Sorted Array: ");    
+for i in range(0, len(new_arr)):    
+    print(new_arr[i], end=" ");    
+
+Original array: 
+2 8 7 1 10
+Sorted Array:
+1 2 7 8 10
+
+3.Write a function that takes an array of numbers and sorts it in place, from smallest to largest.
+
+arr = [2,8,7,1,10];     
+temp = 0;    
+     
+ 
+print("Original array: ");    
+for i in range(0, len(arr)):    
+    print(arr[i], end=" ");    
+     
+ 
+for i in range(0, len(arr)):    
+    for j in range(i+1, len(arr)):    
+        if(arr[i] > arr[j]):    
+            temp = arr[i];    
+            arr[i] = arr[j];    
+            arr[j] = temp;    
+     
+print();    
+     
+
+print("Sorted Array: ");    
+for i in range(0, len(arr)):    
+    print(arr[i], end=" ");    
+
+Original array: 
+2 8 7 1 10
+Sorted Array:
+1 2 7 8 10
+
+4.Write a function that reverses an array in place.
+
+arr=[5,1,7,3,2]
+
+def reverse(arr):
+    stack =[]
+    reversed_str=[]
+
+    def push(test_string):
+        for i in test_string:
+            stack.append(i)
+
+    def pop(stack):
+        for i in range(len(stack)):
+            reversed_str.append(stack[-1])
+            stack.pop()
+        print(reversed_str)
+
+    push(arr)
+    pop(stack)
+
+
+reverse(arr)
+
+[2, 3, 7, 1, 5]
+
+5.Write a function that checks if a string is a valid email. Bonus: Write tests for this function.
+
+def contains(email,special_char):
+    for i in range(len(email)):
+        if email[i]==special_char:
+            return True
+        
+def email_validate(email):
+    if len(email)>10 and email.islower() and (email[0]!='@' or '.') and (email[-1]!='@' or '.') and contains(email,'@') and contains(email,'.') and type(email)==str:
+        print("Valid Email")
+    else:
+        print("Invalid Email")
+email_validate("muthu@gmail.com")
+email_validate("1000000@123.123")
+
+Valid Email
+Invalid Email
